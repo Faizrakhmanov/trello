@@ -22,7 +22,7 @@ public class MainPage {
     }
 
     public WebElement getMainPage() {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(30));
+        WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOfElementLocated((By) mainPage));
         return mainPage;
     }

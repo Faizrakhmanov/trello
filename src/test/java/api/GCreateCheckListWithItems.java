@@ -13,7 +13,9 @@ import static api.helpers.EndPoints.baseUrl;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 
-public class CreateCheckListWithItems {
+public class GCreateCheckListWithItems {
+
+    //Создать чек-лист с пунктами: Понять протокол HTTP, Выучить методы запросов
     @Test
     public void createCheckList() throws Exception {
         String idCard = DateProperties.getFile("idCard");

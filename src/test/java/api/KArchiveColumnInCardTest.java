@@ -9,7 +9,9 @@ import static api.helpers.EndPoints.baseUrl;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 
-public class ArchiveColumnInCardTest {
+public class KArchiveColumnInCardTest {
+
+    //Архивировать колонку "Backlog"
     @Test
     public void archiveColumn() throws Exception {
         Specification.installSpecification(Specification.requestSpec(baseUrl), Specification.responseSpecOK200());

@@ -8,7 +8,9 @@ import org.junit.Test;
 import static api.helpers.EndPoints.baseUrl;
 import static io.restassured.RestAssured.given;
 
-public class PutInCardEmojiTest {
+public class MPutInCardEmojiTest {
+
+    //Поставить в карточке эмоджи Палец вверх
     @Test
     public void addEmoji() throws Exception {
         Specification.installSpecification(Specification.requestSpec(baseUrl), Specification.responseSpecOK200());

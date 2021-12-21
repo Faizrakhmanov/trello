@@ -12,7 +12,9 @@ import static api.helpers.EndPoints.baseUrl;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 
-public class CreateCardInColumnTest {
+public class CCreateCardInColumnTest {
+
+    //Добавить карточку в колонку Backlog с названием "Карточка для изучения API"
     @Test
     public void createCard() throws Exception {
         String idList = DateProperties.getFile("idListBacklog");

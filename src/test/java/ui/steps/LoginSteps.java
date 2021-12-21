@@ -1,5 +1,6 @@
 package ui.steps;
 
+import com.codeborne.selenide.Selenide;
 import helpers.BaseData;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.junit.jupiter.api.AfterEach;
@@ -20,8 +21,9 @@ public class LoginSteps {
     public static MainPage mainPage;
     public static ChromeDriver driver;
 
+//    public LoginSteps(){}
 
-    static final Logger log = getLogger(lookup().lookupClass());
+/*    static final Logger log = getLogger(lookup().lookupClass());
 
     @BeforeAll
     static void setupClass() {
@@ -38,14 +40,13 @@ public class LoginSteps {
     @AfterEach
     void teardown() {
         driver.quit();
-    }
+    }*/
 
-    public static void login() {
+    public void login() {
         String link = "https://trello.com/login";
         driver.get(link);
-        loginPage.inputLogin(BaseData.LOGIN.value, BaseData.PASSWORD.value);
+        loginPage.inputLogin("testtrellouser553@mail.ru", "yUypIIyHy-41");
         BaseSteps.waitLoad();
         mainPage.getMainPage().isDisplayed();
     }
-
 }

@@ -8,7 +8,9 @@ import org.junit.Test;
 import static api.helpers.EndPoints.baseUrl;
 import static io.restassured.RestAssured.given;
 
-public class MoveCardInColumnTest {
+public class JMoveCardInColumnTest {
+
+    //Переместить карточку в эту колонку
     @Test
     public void updateCard() throws Exception {
         Specification.installSpecification(Specification.requestSpec(baseUrl), Specification.responseSpecOK200());

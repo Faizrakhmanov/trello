@@ -1,5 +1,6 @@
 package pages;
 
+import com.codeborne.selenide.Selenide;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
@@ -10,13 +11,13 @@ import org.openqa.selenium.support.ui.WebDriverWait;
 
 import java.time.Duration;
 
-public class LoginPage {
-    public static WebDriver driver;
+public class LoginPage{
+/*    public static WebDriver driver;
 
     public LoginPage(WebDriver driver) {
         PageFactory.initElements(driver, this);
         LoginPage.driver = driver;
-    }
+    }*/
 
     @FindBy(xpath = "//section[@class='inner-section']")
     private WebElement loginPage;
@@ -34,8 +35,8 @@ public class LoginPage {
     private  WebElement loginSubmit;
 
     public void inputLogin(String email, String pass) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
-        wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='user']")));
+    //    WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(10));
+    //    wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//input[@id='user']")));
         loginPage.isDisplayed();
         login.sendKeys(email);
         btnLogin.click();
@@ -47,5 +48,27 @@ public class LoginPage {
 
         password.sendKeys(pass);
         loginSubmit.click();
+    }
+
+    public void open(String url) {
+        Selenide.open(url);
+    }
+
+    public void setLogin(String login) {
+        this.login.sendKeys(login);
+    }
+
+    public void setPassword(String password) {
+        this.password.sendKeys(password);
+    }
+
+    public void clickOnSubmit() {
+        this.btnLogin.click();
+    }
+
+    public void login() {
+        setLogin("testtrellouser553@mail.ru");
+        setPassword("yUypIIyHy-41");
+        clickOnSubmit();
     }
 }

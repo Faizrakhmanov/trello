@@ -12,28 +12,25 @@ import static api.helpers.EndPoints.baseUrl;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 
-public class CreateColumnBacklogTest {
+public class ICreateColumnDoneTest {
 
+    //Создать колонку "Done"
     @Test
     public void createColumn() throws Exception {
         String idBoard = DateProperties.getFile("idBoard");
 
         Specification.installSpecification(Specification.requestSpec(baseUrl), Specification.responseSpecOK200());
-        Response resIdColumn = given().log().all()
+        String idDone = given().log().all()
                 .queryParam("key", EndPoints.api)
                 .queryParam("token", EndPoints.token)
-                .queryParam("name", "Backlog")
+                .queryParam("name", "Done")
                 .queryParam("idBoard", idBoard)
                 .expect().defaultParser(Parser.JSON)
                 .when().post(EndPoints.list)
                 .then().log().all()
-                .assertThat().body("name", is("Backlog"))
-                .extract().response();
+                .assertThat().body("name", is("Done"))
+                .extract().jsonPath().get("id");
 
-        ColumnPojo response = resIdColumn.getBody().as(ColumnPojo.class);
-        String idBacklog = response.getId();
-
-        DateProperties.changeFile("idListBacklog", idBacklog);
+        DateProperties.changeFile("idListDone", idDone);
     }
 }
-

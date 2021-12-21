@@ -13,7 +13,9 @@ import static api.helpers.EndPoints.baseUrl;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 
-public class CreateDueDateNextDayTest {
+public class ECreateDueDateNextDayTest {
+
+    //Поставить срок выполнения на следующий день
     @Test
     public void createDateNextDay() throws Exception {
         String idList = DateProperties.getFile("idListBacklog");

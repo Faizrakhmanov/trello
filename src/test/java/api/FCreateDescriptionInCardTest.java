@@ -12,7 +12,9 @@ import static api.helpers.EndPoints.baseUrl;
 import static io.restassured.RestAssured.given;
 import static org.hamcrest.Matchers.is;
 
-public class CreateDescriptionInCardTest {
+public class FCreateDescriptionInCardTest {
+
+    //Добавить описание "Тут будет отмечаться прогресс обучения"
     @Test
     public void createDescription() throws Exception {
         String idList = DateProperties.getFile("idListBacklog");

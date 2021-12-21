@@ -13,8 +13,8 @@
         <maven.compiler.target>${java.version}</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
-        <selenium.version>4.0.0</selenium.version>
-        <selenium-chrome.version>4.1.0</selenium-chrome.version>
+        <selenium.version>3.141.59</selenium.version>
+        <selenium-chrome.version>3.9.1</selenium-chrome.version>
         <selenide.version>5.18.1</selenide.version>
         <junit.version>5.7.1</junit.version>
         <junit-platform-launcher.version>1.7.1</junit-platform-launcher.version>
@@ -196,6 +196,12 @@
             <artifactId>junit-jupiter-api</artifactId>
             <version>5.8.2</version>
             <scope>test</scope>
+        </dependency>
+        <dependency>
+            <groupId>org.junit.jupiter</groupId>
+            <artifactId>junit-jupiter-api</artifactId>
+            <version>5.8.2</version>
+            <scope>compile</scope>
         </dependency>
     </dependencies>
 
