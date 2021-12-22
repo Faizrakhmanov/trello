@@ -1,18 +1,22 @@
 package ui;
 
+import com.codeborne.selenide.Selenide;
+import org.junit.After;
+import org.junit.jupiter.api.BeforeAll;
 import org.junit.jupiter.api.Test;
 import pages.LoginPage;
+import ui.steps.BaseSteps;
 import ui.steps.BaseTest;
+import ui.steps.LoginSteps;
 
-public class CheckCardInRowDoneTest extends BaseTest {
-
-    private final static String baseUrl = "https://trello.com/login";
+public class CheckCardInRowDoneTest {
 
     @Test
     public void checkCardDone() {
-        LoginPage loginPage = new LoginPage();
-        loginPage.open(baseUrl);
-        loginPage.login();
-//        loginPage.inputLogin("testtrellouser553@mail.ru", "yUypIIyHy-41");
+        LoginSteps.login();
+        BaseSteps.open("KanbanTool");
+        BaseSteps.isDisplayedCard("Карточка для изучения API");
+        BaseSteps.cardIsLocatedIn("Карточка для изучения API", "Done");
+        LoginSteps.driver.close();
     }
 }
