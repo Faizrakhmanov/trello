@@ -14,7 +14,7 @@ public class CheckCardInRowDoneTest {
     @Test
     public void checkCardDone() {
         LoginSteps.login();
-        BaseSteps.open("KanbanTool");
+        BaseSteps.openBoard("KanbanTool");
         BaseSteps.isDisplayedCard("Карточка для изучения API");
         BaseSteps.cardIsLocatedIn("Карточка для изучения API", "Done");
         LoginSteps.driver.close();

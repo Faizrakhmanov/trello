@@ -1,19 +1,17 @@
 package ui.steps;
 
-import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.NoSuchElementException;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import pages.BoardPage;
+import pages.CardPage;
 import pages.MainPage;
-
-import java.time.Duration;
 
 public class BaseSteps {
     public static WebDriver driver;
-    public static MainPage mainPage;
 
     public static void isDisplayedCard(String name) {
         MainPage.driver.findElement(By.xpath("//span[text()='" + name + "']/ancestor::a[contains(@class, 'list-card')]")).isDisplayed();
@@ -24,11 +22,17 @@ public class BaseSteps {
                 .until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@id='chrome-container']")));
     }
 
-    public static void open(String name) {
+    public static void openBoard(String name) {
         WebElement element = MainPage.driver.findElement(By.xpath("//div[@title='" + name + "']/parent::div"));
         element.isDisplayed();
         element.click();
         waitLoad();
+    }
+
+    public static void openCard(String name) {
+        WebDriverWait wait = new WebDriverWait(MainPage.driver, 10);
+        WebElement element = wait.until(ExpectedConditions.elementToBeClickable(By.xpath("//span[text()='" + name + "']/ancestor::div[contains(@class,'card-details')]")));
+        element.click();
     }
 
     public static void cardIsLocatedIn(String nameCard, String nameColumn) {
@@ -47,7 +51,16 @@ public class BaseSteps {
         }
     }
 
-    public static void menuInBoard() {
-        mainPage.openMenu();
+    public static void selectBackground() {
+        BoardPage boardPage = new BoardPage(MainPage.driver);
+        boardPage.changeCover();
+        boardPage.selectColors();
+        boardPage.selectColorGreen();
+    }
+
+    public static void selectCover() {
+        CardPage cardPage = new CardPage(MainPage.driver);
+        cardPage.openCover();
+        cardPage.selectColor();
     }
 }

@@ -19,21 +19,9 @@ public class MainPage {
     @FindBy(xpath = "//div[@class='home-sticky-container']")
     private WebElement mainPage;
 
-    @FindBy(xpath = "//span[text()='Меню']")
-    private WebElement menu;
-
-    @FindBy(xpath = "//a[contains(text(), 'Сменить фон')]")
-    private WebElement changeCover;
-
     public WebElement getMainPage() {
         WebDriverWait wait = new WebDriverWait(driver, 30);
         wait.until(ExpectedConditions.visibilityOfElementLocated(By.xpath("//div[@class='home-sticky-container']")));
         return mainPage;
     }
-
-    public void openMenu() {
-        menu.click();
-        changeCover.click();
-    }
-
 }
