@@ -24,6 +24,5 @@ public class LoginSteps {
         loginPage.inputLogin("testtrellouser553@mail.ru", "yUypIIyHy-41");
         BaseSteps.waitLoad();
         mainPage.getMainPage().isDisplayed();
-
     }
 }

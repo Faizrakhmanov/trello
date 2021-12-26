@@ -4,11 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CardPojo {
-        private String id;
-        private String name;
-        private boolean closed;
-        private int pos;
-        private String idBoard;
+    private String id;
+    private String name;
+    private boolean closed;
+    private int pos;
+    private String idBoard;
 
     public CardPojo(String id, String name, boolean closed, int pos, String idBoard) {
         this.id = id;

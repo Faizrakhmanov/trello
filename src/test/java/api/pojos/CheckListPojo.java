@@ -4,11 +4,11 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class CheckListPojo {
-        private String id;
-        private String name;
-        private String idCard;
-        private int pos;
-        private String idBoard;
+    private String id;
+    private String name;
+    private String idCard;
+    private int pos;
+    private String idBoard;
 
     public CheckListPojo(String id, String name, String idCard, int pos, String idBoard) {
         this.id = id;

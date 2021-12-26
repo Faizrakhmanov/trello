@@ -4,15 +4,14 @@ import org.junit.jupiter.api.Test;
 import ui.steps.BaseSteps;
 import ui.steps.LoginSteps;
 
-public class PutCoverGreenColorTest {
+public class ACheckCardInRowDoneTest {
 
     @Test
-    public void changeCover() {
+    public void checkCardDone() {
         LoginSteps.login();
         BaseSteps.openBoard("KanbanTool");
         BaseSteps.isDisplayedCard("Карточка для изучения API");
-        BaseSteps.openCard("Карточка для изучения API");
-        BaseSteps.selectCover();
+        BaseSteps.cardIsLocatedIn("Карточка для изучения API", "Done");
         LoginSteps.driver.close();
     }
 }

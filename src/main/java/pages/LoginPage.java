@@ -29,7 +29,7 @@ public class LoginPage {
     private WebElement buttonLogin;
 
     @FindBy(xpath = "//button[@id='login-submit']")
-    private  WebElement loginSubmit;
+    private WebElement loginSubmit;
 
     public void inputLogin(String email, String pass) {
         WebDriverWait wait = new WebDriverWait(driver, 10);

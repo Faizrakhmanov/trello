@@ -20,7 +20,7 @@ public class MPutInCardEmojiTest {
                 .queryParam("key", EndPoints.api)
                 .queryParam("token", EndPoints.token)
                 .queryParam("text", ":thumbsup: ")
-                .when().post(EndPoints.card  + idCard + EndPoints.comment)
+                .when().post(EndPoints.card + idCard + EndPoints.comment)
                 .then().log().all();
     }
 }

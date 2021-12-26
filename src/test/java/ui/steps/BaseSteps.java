@@ -1,9 +1,6 @@
 package ui.steps;
 
-import org.openqa.selenium.By;
-import org.openqa.selenium.NoSuchElementException;
-import org.openqa.selenium.WebDriver;
-import org.openqa.selenium.WebElement;
+import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 import pages.BoardPage;
@@ -62,5 +59,41 @@ public class BaseSteps {
         CardPage cardPage = new CardPage(MainPage.driver);
         cardPage.openCover();
         cardPage.selectColor();
+    }
+
+    public static void changeNameBoard(String nameBoard) {
+        BoardPage boardPage = new BoardPage(MainPage.driver);
+        boardPage.nameBord().click();
+        boardPage.changeBoard().sendKeys(nameBoard);
+        boardPage.changeBoard().sendKeys(Keys.ENTER);
+    }
+
+    public static void changeVisibility() {
+        BoardPage boardPage = new BoardPage(MainPage.driver);
+        boardPage.selectVisibility();
+        boardPage.selectPublic();
+        boardPage.makePublicBoard();
+    }
+
+    public static void checkTaskCompleted() {
+        CardPage cardPage = new CardPage(MainPage.driver);
+        try {
+            cardPage.getTerm().isDisplayed();
+        } catch (ElementNotVisibleException e) {
+            System.out.println("В карточке истек срок выполнения задачи");
+            System.exit(1);
+        }
+        cardPage.getCheckTime().click();
+        cardPage.getCloseCard().click();
+    }
+
+    public static void checkedItems(String name) {
+        CardPage cardPage = new CardPage(MainPage.driver);
+        cardPage.getCheckbox(name).isDisplayed();
+    }
+
+    public static void closeCard() {
+        CardPage cardPage = new CardPage(MainPage.driver);
+        cardPage.getCloseCard().click();
     }
 }

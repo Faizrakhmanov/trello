@@ -4,13 +4,13 @@ import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 
 @JsonIgnoreProperties(ignoreUnknown = true)
 public class BoardPojo {
-        private String id;
-        private String name;
-        private String desc;
-        private Object descData;
-        private boolean closed;
-        private String idOrganization;
-        private Object idEnterprise;
+    private String id;
+    private String name;
+    private String desc;
+    private Object descData;
+    private boolean closed;
+    private String idOrganization;
+    private Object idEnterprise;
 
     public String getId() {
         return id;
@@ -66,8 +66,8 @@ public class BoardPojo {
     }
 
     public boolean pinned;
-        public String url;
-        public String shortUrl;
+    public String url;
+    public String shortUrl;
 
     public BoardPojo() {
         super();

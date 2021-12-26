@@ -2,10 +2,8 @@ package api;
 
 import api.Specification.Specification;
 import api.helpers.EndPoints;
-import api.pojos.ColumnPojo;
 import framework.DateProperties;
 import io.restassured.parsing.Parser;
-import io.restassured.response.Response;
 import org.junit.jupiter.api.Test;
 
 import static api.helpers.EndPoints.baseUrl;
