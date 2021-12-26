@@ -6,6 +6,7 @@ import ui.steps.LoginSteps;
 
 public class FChangeVisibilityBoardTest {
 
+    //Изменение видимости доски
     @Test
     public void changeVisibility() {
         LoginSteps.login();

@@ -6,6 +6,7 @@ import ui.steps.LoginSteps;
 
 public class BMakeAllCheckBoxItemsMetTest {
 
+    //Удостовериться, все пункты чек-боксов выполнены
     @Test
     public void allCheckBoxItemsMet() {
         LoginSteps.login();

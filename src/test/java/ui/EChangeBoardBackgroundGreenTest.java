@@ -6,6 +6,7 @@ import ui.steps.LoginSteps;
 
 public class EChangeBoardBackgroundGreenTest {
 
+    //Сменить фон доски на зеленый цвет
     @Test
     public void changeBackground() {
         LoginSteps.login();

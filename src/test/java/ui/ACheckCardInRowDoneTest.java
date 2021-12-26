@@ -6,6 +6,7 @@ import ui.steps.LoginSteps;
 
 public class ACheckCardInRowDoneTest {
 
+    //Удостовериться, что карточка находится в колонке Done
     @Test
     public void checkCardDone() {
         LoginSteps.login();

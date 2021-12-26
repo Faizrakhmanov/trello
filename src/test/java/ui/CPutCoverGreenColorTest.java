@@ -6,6 +6,7 @@ import ui.steps.LoginSteps;
 
 public class CPutCoverGreenColorTest {
 
+    //Поставить обложку с зеленым цветом
     @Test
     public void changeCover() {
         LoginSteps.login();

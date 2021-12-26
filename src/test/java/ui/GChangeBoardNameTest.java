@@ -6,6 +6,7 @@ import ui.steps.LoginSteps;
 
 public class GChangeBoardNameTest {
 
+    //Сменить имя доски на "Только для образования"
     @Test
     public void changeBoardName() {
         LoginSteps.login();

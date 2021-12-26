@@ -6,6 +6,7 @@ import ui.steps.LoginSteps;
 
 public class DIndicateTaskCompletedOnTimeTest {
 
+    //Отметить, что задача выполнена в срок
     @Test
     public void completeOnTime() {
         LoginSteps.login();
