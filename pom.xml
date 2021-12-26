@@ -24,11 +24,6 @@
         <maven-compiler-plugin.version>3.8.1</maven-compiler-plugin.version>
         <rest-assured.version>4.4.0</rest-assured.version>
         <jaxws.version>2.3.1</jaxws.version>
-<!--        <chrome.switches>&#45;&#45;window-size=1920,1080; &#45;&#45;start-maximized;
-            &#45;&#45;ignore-certificate-errors
-        </chrome.switches>
-        <webdriver.headless>false</webdriver.headless>
-        <webdriver.driver>chrome</webdriver.driver>-->
         <webdrivermanager.version>5.0.3</webdrivermanager.version>
     </properties>
 
@@ -50,9 +45,6 @@
                         </property>
                     </properties>
                     <systemPropertyVariables>
-<!--                        <webdriver.driver>${webdriver.driver}</webdriver.driver>
-                        <webdriver.headless>${webdriver.headless}</webdriver.headless>
-                        <chrome.switches>${chrome.switches}</chrome.switches>-->
                         <org.slf4j.simpleLogger.log.org.apache.http>ERROR</org.slf4j.simpleLogger.log.org.apache.http>
                         <org.slf4j.simpleLogger.log.org.apache.http.wire>ERROR</org.slf4j.simpleLogger.log.org.apache.http.wire>
                         <org.slf4j.simpleLogger.log.io.restassured.internal>ERROR</org.slf4j.simpleLogger.log.io.restassured.internal>
@@ -192,5 +184,4 @@
             <scope>test</scope>
         </dependency>
     </dependencies>
-
 </project>
